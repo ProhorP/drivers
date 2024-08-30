@@ -1,2 +1,2 @@
 #!/bin/bash
-make -C ~/linux-6.1 M=`pwd` modules
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
