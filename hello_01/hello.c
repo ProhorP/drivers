@@ -11,7 +11,7 @@ static int __init hello_init(void)
 
 static void __exit hello_exit(void)
 {
-	printk(KERN_ALERT "Goodbye, cruel world\n");
+	printk(KERN_ALERT "Goodbye, cruel world: %ld\n", init_number);
 }
 
 module_init(hello_init);
