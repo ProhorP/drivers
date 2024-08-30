@@ -1,17 +1,17 @@
 #include <linux/init.h>
 #include <linux/module.h>
 
-static unsigned long    init_number = 100;
+static unsigned long init_number = 100;
 
 static int __init hello_init(void)
 {
-printk(KERN_ALERT "Hello, world\n");
-return 0;
+	printk(KERN_ALERT "Hello, world\n");
+	return 0;
 }
 
 static void __exit hello_exit(void)
 {
-printk(KERN_ALERT "Goodbye, cruel world\n");
+	printk(KERN_ALERT "Goodbye, cruel world\n");
 }
 
 module_init(hello_init);
