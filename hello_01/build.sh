@@ -1,2 +1,2 @@
 #!/bin/bash
-make -C ~/kernel-6.1 M=`pwd` modules
+make -C ~/linux-6.1 M=`pwd` modules
