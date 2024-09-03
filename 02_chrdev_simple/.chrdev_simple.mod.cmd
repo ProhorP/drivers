@@ -1,0 +1,1 @@
+cmd_/home/user/linux_drivers_tutorial/02_chrdev_simple/chrdev_simple.mod := printf '%s\n'   chrdev_simple.o | awk '!x[$$0]++ { print("/home/user/linux_drivers_tutorial/02_chrdev_simple/"$$0) }' > /home/user/linux_drivers_tutorial/02_chrdev_simple/chrdev_simple.mod

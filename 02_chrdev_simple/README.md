@@ -3,8 +3,8 @@
 В которым можно будет писать и из которого можно читать
 ```
 make
-sudo insmod chdev_simple.ko size=10000
+sudo insmod chrdev_simple.ko size=10000
 sudo journalctl -r
-sudo rmmod chdev_simple.ko
+sudo rmmod chrdev_simple.ko
 make clean
 ```

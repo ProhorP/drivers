@@ -1,5 +1,5 @@
-obj-m := hello.o
-module-objs := hello.o
+obj-m := chrdev_simple.o
+module-objs := chrdev_simple.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
