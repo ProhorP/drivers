@@ -1,1 +1,0 @@
-cmd_/home/user/linux_drivers_tutorial/02_chrdev_simple/Module.symvers :=  sed 's/ko$$/o/'  /home/user/linux_drivers_tutorial/02_chrdev_simple/modules.order | scripts/mod/modpost -m      -o /home/user/linux_drivers_tutorial/02_chrdev_simple/Module.symvers -e -i Module.symvers -T - 

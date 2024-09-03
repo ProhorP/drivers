@@ -1,1 +1,0 @@
-cmd_/home/user/linux_drivers_tutorial/02_chrdev_simple/modules.order := {   echo /home/user/linux_drivers_tutorial/02_chrdev_simple/chrdev_simple.ko; :; } > /home/user/linux_drivers_tutorial/02_chrdev_simple/modules.order
