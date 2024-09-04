@@ -60,8 +60,7 @@ static int __init hello_init(void)
 
 	data = kmalloc(size * sizeof(char*), GFP_KERNEL);
 	if (!data) {
-		PRINT("error kmallocl(%ld)\n",
-		       size * sizeof(char*));
+		PRINT("error kmallocl(%ld)\n", size * sizeof(char*));
 		goto end;
 	}
 
@@ -184,11 +183,23 @@ loff_t scull_llseek(struct file* filp, loff_t off, int whence)
 {
 	loff_t newpos;
 
-	if (off < size - 1)
-		newpos = off;
-	else
-		newpos = 0;
+	switch (whence) {
+		case 0: /* SEEK_SET */
+			newpos = off;
+			break;
+		case 1: /* SEEK_CUR */
+			newpos = filp->f_pos + off;
+			break;
+		case 2: /* SEEK_END */
+			newpos = size + off;
+			break;
+		default: /* не может произойти */
+			return -EINVAL;
+	}
+	if (newpos < 0)
+		return -EINVAL;
 
+	filp->f_pos = newpos;
 	return newpos;
 }
 
