@@ -38,7 +38,7 @@ static int __init proc_read_init(void)
 	msg = kmalloc(size, GFP_KERNEL);
 	if (!msg) {
 		PRINT("error kmallocl(%ld)\n", size);
-		goto end;
+		return -ENOMEM;
 	}
 	memset(msg, 0, size);
 
@@ -46,7 +46,6 @@ static int __init proc_read_init(void)
 	if (!proc_file)
 		return -ENOMEM;
 
-end:
 	return 0;
 }
 

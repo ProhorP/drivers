@@ -61,6 +61,7 @@ static int __init hello_init(void)
 	data = kmalloc(size * sizeof(char*), GFP_KERNEL);
 	if (!data) {
 		PRINT("error kmallocl(%ld)\n", size * sizeof(char*));
+		result = -ENOMEM;
 		goto end;
 	}
 
