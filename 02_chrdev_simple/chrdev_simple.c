@@ -48,6 +48,7 @@ static int __init hello_init(void)
 	dev = 0;
 	scull_major = 0;
 	scull_minor = 0;
+	memset(&cdev, 0, sizeof(cdev));
 
 	result = alloc_chrdev_region(&dev, scull_minor, count, "chrdev_simple");
 	if (result < 0) {
