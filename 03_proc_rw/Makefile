@@ -1,5 +1,5 @@
-obj-m := proc_read.o
-module-objs := proc_read.o
+obj-m := proc_rw.o
+module-objs := proc_rw.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules

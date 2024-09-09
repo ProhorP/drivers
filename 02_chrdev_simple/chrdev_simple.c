@@ -167,6 +167,8 @@ ssize_t scull_write(struct file* filp, const char __user* buf, size_t count,
 	if (*f_pos + count > size)
 		count = size - *f_pos;
 
+	memset(data, 0, size);
+
 	if (copy_from_user(data + *f_pos, buf, count)) {
 		retval = -EFAULT;
 		goto end;
