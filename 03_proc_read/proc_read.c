@@ -4,6 +4,15 @@
 
 static char* str = "Non";
 
+int proc_read(char* buf, char** start, off_t offset, int count, int* eof,
+              void* data)
+{
+	int len = 0;
+	len = sprintf(buf + len, "%s\n", str);
+	*eof = 1;
+	return len;
+}
+
 static int __init proc_read_init(void)
 {
 	create_proc_read_entry("proc_read", 0 /* режим по умолчанию */,
@@ -18,15 +27,6 @@ static void __exit proc_read_exit(void)
 {
 
 	remove_proc_entry("proc_read", NULL /* родительская директория */);
-}
-
-int proc_read(char* buf, char** start, off_t offset, int count, int* eof,
-              void* data)
-{
-	int len = 0;
-	len = sprintf(buf + len, "%s\n", str);
-	*eof = 1;
-	return len;
 }
 
 module_init(proc_read_init);
